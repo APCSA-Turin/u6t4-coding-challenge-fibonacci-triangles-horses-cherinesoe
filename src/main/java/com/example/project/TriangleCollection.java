@@ -29,10 +29,10 @@ public class TriangleCollection {
     // PRECONDITION: numTriangles >= 2
     public TriangleCollection(int numTriangles, int startX, int startY) {
       /* IMPLEMENT ME */
-      Triangle[] collection = new Triangle[numTriangles];
-      collection[0] = new Triangle((new Point(-1 * startX, 0)), new Point(0, startY), new Point(startX, 0));
+      this.collection = new Triangle[numTriangles];
+      collection[0] = new Triangle(new Point(-1 * startX, 0), new Point(0, startY), new Point(startX, 0));
       for (int i = 1; i < collection.length; i++) {
-        collection[i] = new Triangle((new Point(-1 * startX, 0)), new Point(0, startY), new Point(startX - i, 0));
+        collection[i] = new Triangle(new Point(-1 * startX, 0), new Point(0, startY), new Point(startX - i, 0));
       }
     }
   
@@ -41,8 +41,8 @@ public class TriangleCollection {
     public double totalPerimeter() {
       /* IMPLEMENT ME */
       double sum = 0;
-      for (Triangle triangle : collection) {
-        sum += triangle.perimeter();
+      for (int i = 0; i < collection.length; i++) {
+        sum += collection[i].perimeter();
       }
       return sum;
     }

@@ -8,7 +8,10 @@ public class Triangle {
     // to contain the three Point objects
     public Triangle(Point p1, Point p2, Point p3) {
       /* IMPLEMENT ME */
-      Point[] vertices = {p1, p2, p3};
+      vertices = new Point[3];
+      vertices[0] = p1;
+      vertices[1] = p2;
+      vertices[2] = p3;
     }
 
     public Point[] getVertices() {
@@ -30,7 +33,7 @@ public class Triangle {
     // this method should return: "[(6, 10), (11, 15), (18, 7)]"
     public String triangleInfo() {
       /* IMPLEMENT ME */
-      return "[" + vertices[0].pointInfo() + vertices[1].pointInfo() + vertices[2].pointInfo() + "]";
+      return "[" + vertices[0].pointInfo() + ", " + vertices[1].pointInfo() + ", " + vertices[2].pointInfo() + "]";
     }
   }
   
